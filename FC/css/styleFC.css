@@ -180,6 +180,35 @@ h4 {
 
 
  /***** Acerca *****/
+ .Acerca{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: center;
+  padding: 5% 5%;  
+}
+
+
+
+.Cuerpo .Acerca li{
+  list-style: none;
+}
+
+.Imagen-Acerca img{
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  padding: 5% 5%;
+}
+
+.Texto-Acerca img{
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  padding: 5% 5%;
+}
+
  /***** Contacto *****/
 
  /***** Footer *****/
