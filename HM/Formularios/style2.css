@@ -1,0 +1,23 @@
+.formRegistro {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.tituloRegistro {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+}
+
+.labelSexo {
+  padding-left: 0px;
+}
+
+.form-floating,
+.form-select {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  margin: 25px;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrate</title>
+    <script
+      src="https://kit.fontawesome.com/499e04b499.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <section class="formRegistro">
+      <h1 class="tituloRegistro">Registrate</h1>
+
+      <i class="fas fa-user-plus fa-8x d-grid col-2 mx-auto mb-5"></i>
+
+      <form class="form-horizontal" action="/action_page.php">
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Escribe tú Nombre"
+                id="nombre"
+                required
+              />
+              <label class="control-label" for="nombre">Nombre:</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Escribe tú Apellido"
+                id="apellido"
+                required
+              />
+              <label class="control-label" for="apellido">Apellido:</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                id="email"
+                placeholder="Escribe tú correo"
+                required
+              />
+              <label class="control-label" for="email">Correo:</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="number"
+                placeholder="Escribe tú Teléfono"
+                id="telefono"
+                required
+              />
+              <label class="control-label" for="telefono">Teléfono:</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-group">
+              <label class="form-check labelSexo">Sexo:</label>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input sex"
+                  type="radio"
+                  name="sexo"
+                  id="sexo1"
+                />
+                <label class="form-check-label" for="sexo1"> Femenino </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sexo"
+                  id="sexo2"
+                />
+                <label class="form-check-label" for="sexo2"> Maculino </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="sexo"
+                  id="sexo3"
+                />
+                <label class="form-check-label" for="sexo3"> Otro </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Escribe tú pais"
+                id="pais"
+              />
+              <label class="control-label" for="pais">Pais:</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="listaGeneros" class="form-label">Genero favorito:</label>
+          <select
+            class="form-select form-control-lg"
+            aria-label="Large select example"
+            id="listaGeneros"
+          >
+            <option selected>Selecciona tú genero favorito</option>
+            <option value="1">Acción</option>
+            <option value="2">Drama</option>
+            <option value="3">Terror</option>
+          </select>
+        </div>
+
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="Escribe tú Usuario"
+                id="usuario"
+                required
+              />
+              <label class="control-label" for="usuario"
+                >Elije un Usuario:</label
+              >
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                class="form-control form-control-lg"
+                type="password"
+                placeholder="Escribe tú Contraseña"
+                id="password"
+                required
+              />
+              <label class="control-label" for="password"
+                >Escribe una Contraseña:</label
+              >
+            </div>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="recordarme"
+            />
+            <label class="form-check-label" for="recordarme">
+              Remember me</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="notificacion"
+            />
+            <label class="form-check-label" for="notificacion">
+              Desea recibir notificación de nuevos lanzamientos ?
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-primary">Registrarme</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
