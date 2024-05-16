@@ -96,16 +96,12 @@ Ojo que está el menu superior y el hamburquesa, hay que modificar los dos. -->
             </div>
           `;
 
-
           jsonContainer.innerHTML += Nhtml; // Agrega lo escrito
 
           });
-
-            resultados.innerHTML = '';
-          } else {
-            resultados.innerHTML = '<p>No se encontraron elementos para este género.</p>';
           }
-        })
+          })
+
         .catch(error => {
           alert('Error al leer el archivo ' + ArcJson); //Aviso si el Json no se encontró
         });
