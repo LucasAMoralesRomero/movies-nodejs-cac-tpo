@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctenos</title>
+    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/499e04b499.js"
       crossorigin="anonymous"
@@ -14,15 +15,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section class="formContacto">
+    <section class="contacto">
       <h1 class="tituloContacto">Contáctenos</h1>
 
       <i class="fas fa-comments fa-8x d-grid col-2 mx-auto mb-5"></i>
 
-      <form class="" action="/action_page.php">
+      <form class="formContacto" action="#">
         <div class="row g-2">
           <div class="col-md">
             <div class="form-floating">
@@ -32,8 +32,15 @@
                 placeholder="Escribe tú Nombre"
                 id="nombre"
                 required
+                oninput="validarInput()"
               />
-              <label class="control-label" for="nombre">Nombre:</label>
+              <label class="control-label nombre" for="nombre">Nombre:</label>
+              <span
+                class="form-text"
+                id="textoError"
+                style="color: red; display: none"
+                >*Solo introducir letras</span
+              >
             </div>
           </div>
           <div class="col-md">
@@ -44,21 +51,37 @@
                 placeholder="Escribe tú Apellido"
                 id="apellido"
                 required
+                oninput="validarInput()"
               />
-              <label class="control-label" for="apellido">Apellido:</label>
+              <label class="control-label apellido" for="apellido"
+                >Apellido:</label
+              >
+              <span
+                class="form-text"
+                id="textoError2"
+                style="color: red; display: none"
+                >*Solo introducir letras</span
+              >
             </div>
           </div>
         </div>
 
         <div class="form-floating">
           <input
-            type="email"
+            type="text"
             class="form-control form-control-lg"
             id="email"
             placeholder="Escribe tú correo"
             required
+            oninput="validarEmail()"
           />
-          <label class="control-label" for="email">Correo:</label>
+          <label class="control-label email" for="email">Correo:</label>
+          <span
+            class="form-text"
+            id="emailError"
+            style="color: red; display: none"
+            >*Recuerde introducir el @ y dominio, ej: correo@dominio.com</span
+          >
         </div>
 
         <div class="row g-2">
@@ -66,11 +89,21 @@
             <div class="form-floating">
               <input
                 class="form-control form-control-lg"
-                type="number"
+                type="text"
                 placeholder="Escribe tú Teléfono"
                 id="telefono"
+                required
+                oninput="validarInput()"
               />
-              <label class="control-label" for="telefono">Teléfono:</label>
+              <label class="control-label telefono" for="telefono"
+                >Teléfono:</label
+              >
+              <span
+                class="form-text"
+                id="numeroError"
+                style="color: red; display: none"
+                >*Solo introducir números</span
+              >
             </div>
           </div>
           <div class="col-md">
@@ -80,8 +113,16 @@
                 type="text"
                 placeholder="Escribe tú pais"
                 id="pais"
+                required
+                oninput="validarInput()"
               />
-              <label class="control-label" for="pais">Pais:</label>
+              <label class="control-label pais" for="pais">Pais:</label>
+              <span
+                class="form-text"
+                id="textoError3"
+                style="color: red; display: none"
+                >*Solo introducir letras</span
+              >
             </div>
           </div>
         </div>
@@ -91,9 +132,8 @@
             class="form-control"
             placeholder="Deja tú comentario aquí..."
             id="comentario"
-            style="height: 200px"
           ></textarea>
-          <label for="comentario">Comentanos:</label>
+          <label class="comentario" for="comentario">Comentanos:</label>
         </div>
 
         <div class="form-group">
@@ -103,5 +143,6 @@
         </div>
       </form>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-.formRegistro {
-  width: 70%;
+.registro {
+  width: 60%;
   margin: 0 auto;
 }
 
@@ -9,14 +9,48 @@
   letter-spacing: 5px;
 }
 
-.labelSexo {
-  padding-left: 0px;
-}
-
 .form-floating,
 .form-select {
   margin-bottom: 15px;
 }
+
+.form-text {
+  font-size: 10px !important;
+}
+
+#nombre,
+#apellido,
+#email,
+#telefono,
+#pais {
+  border: none !important;
+  border-bottom: 3px solid #4d4848 !important;
+  border-radius: 0 !important;
+  padding-left: 0;
+}
+
+.nombre,
+.apellido,
+.email,
+.telefono,
+.pais,
+.labelSexo {
+  padding-left: 0 !important;
+}
+
+#nombre:focus,
+#apellido:focus,
+#email:focus,
+#telefono:focus,
+#pais:focus {
+  border-bottom: 2px solid #706d6d !important;
+  outline: none;
+  box-shadow: none;
+}
+
+/* .labelSexo {
+  padding-left: 0px !important;
+} */
 
 .btn-primary {
   margin: 25px;

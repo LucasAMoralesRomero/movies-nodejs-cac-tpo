@@ -1,4 +1,4 @@
-.formContacto {
+.contacto {
   width: 55%;
   margin: 0 auto;
 }
@@ -11,6 +11,46 @@
 
 .form-floating {
   margin-bottom: 15px;
+}
+
+.form-text {
+  font-size: 10px !important;
+}
+
+#nombre,
+#apellido,
+#email,
+#telefono,
+#pais,
+#comentario {
+  border: none !important;
+  border-bottom: 3px solid #4d4848 !important;
+  border-radius: 0 !important;
+  padding-left: 0;
+}
+
+#comentario {
+  height: 200px;
+}
+
+.nombre,
+.apellido,
+.email,
+.telefono,
+.pais,
+.comentario {
+  padding-left: 0 !important;
+}
+
+#nombre:focus,
+#apellido:focus,
+#email:focus,
+#telefono:focus,
+#pais:focus,
+#comentario:focus {
+  border-bottom: 2px solid #706d6d !important;
+  outline: none;
+  box-shadow: none;
 }
 
 .btn-primary {
