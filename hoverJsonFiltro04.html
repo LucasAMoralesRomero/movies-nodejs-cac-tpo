@@ -1,0 +1,112 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<style> 
+/*Estilo del menu provisorio, después se quita*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+    /* font-size: 20px; */
+} 
+
+.navbar {  
+  background-color: #333; /* Background color */  
+  overflow: hidden; /* Clear floats */  
+}  
+  
+.navbar a {  
+  float: left; /* Float the links to the left */  
+  display: block; /* Display links as blocks */  
+  color: white; /* text color */  
+  text-align: center; /* Center-align the text */  
+  padding: 14px 16px; /* Padding around the links */  
+  text-decoration: none; /* Remove underline from links */  
+}  
+  
+/* Cambio de color con el hover */  
+.navbar a:hover {  
+  background-color: #ddd; /* Background color on hover */  
+  color: black; /* Text color on hover */  
+}  
+</style>
+<!-- Hoja de estilo de las imágenes -->
+<link rel="stylesheet" href="hover01.css">
+
+</head>  
+
+<!-- Al cargar la página necesito cargar todas las peliculas -->
+<body onload="mostrarValor('Todas')">
+
+<!-- Estas son las categorias que se seleccionan, después van en el menú principal
+Ojo que está el menu superior y el hamburquesa, hay que modificar los dos. -->
+
+<div class="navbar" >  
+  <a href="#" onclick="mostrarValor('Todas')">Todas</a>  
+  <a href="#" onclick="mostrarValor('Accion')">Accion</a>  
+  <a href="#" onclick="mostrarValor('Comedia')">Comedia</a>  
+  <a href="#" onclick="mostrarValor('Drama')">Drama</a>  
+</div>  
+
+<div id="resultados"></div>
+
+<div class="gallery">
+  <div class="grid">
+    <div class="grid" id="json-container"></div>
+
+<script>
+    function mostrarValor(valor) {
+
+      var generoSeleccionado = valor; // esto es lo que traigo desde el menú
+      var resultados = document.getElementById('resultados'); //esto es donde voy a escribir el html
+      //var valor = 'Todas';
+
+      // Pido el archivo json con los datos
+      var ArcJson = 'DataPelis04.json'
+      fetch(ArcJson)
+        .then(response => response.json())
+        .then(data => {
+          
+
+          // Filtrar por el género seleccionado (si son 'Todas' quito el filtro)
+          if(valor ==='Todas'){
+            var PelisFiltradas = data;
+          }
+          else  var PelisFiltradas = data.filter(item => item.genero === valor);
+          
+
+          var jsonContainer = document.getElementById('json-container');  
+          jsonContainer.innerHTML = ''; //Esto limpia el html
+         
+
+          if (PelisFiltradas.length > 0) {
+            PelisFiltradas.forEach(item => {
+              
+            //Esta es la magia: escribo html!
+
+              var Nhtml = `
+            <div class="contenedor-img hover-1">
+              <img src="${item.archivo}" />
+              <div class="mascara">
+                <h2>${item.titulo}</h2>
+                <p>${item.texto}</p>
+                <a href=${item.link} class="link">Ver Trailer</a>
+              </div>
+            </div>
+          `;
+
+          jsonContainer.innerHTML += Nhtml; // Agrega lo escrito
+
+          });
+          }
+          })
+
+        .catch(error => {
+          alert('Error al leer el archivo ' + ArcJson); //Aviso si el Json no se encontró
+        });
+    }
+</script>
+
+</body>  
+</html>  
