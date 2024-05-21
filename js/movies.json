@@ -7,9 +7,9 @@
   "descripcion": "Tres tenistas reviven viejas rivalidades dentro y fuera de la pista mientras compiten por el prestigioso título del Grand Slam.",
   "tiempo": "2h 11m",
   "anio": 2024,
-  "imagen1": ".\/movies\/rivales1.jpg",
-  "imagen2": ".\/movies\/rivales2.jpg",
-  "imagen3": ".\/movies\/rivales3.jpg",
+  "imagen1": "../movies/rivales1.jpg",
+  "imagen2": "../movies/rivales2.jpg",
+  "imagen3": "../movies/rivales3.jpg",
   "link": "2_ojxFOrAgQ?si=qkjCD6_vHSO-vddd"
  },
  {
@@ -20,9 +20,9 @@
   "descripcion": "Un doble de Hollywood trabaja como cazarrecompensas para sobrevivir.",
   "tiempo": "2h 6m",
   "anio": 2024,
-  "imagen1": ".\/movies\/elEspecialista1.jpg",
-  "imagen2": ".\/movies\/elEspecialista2.jpg",
-  "imagen3": ".\/movies\/elEspecialista3.jpg",
+  "imagen1": "../movies/elEspecialista1.jpg",
+  "imagen2": "../movies/elEspecialista2.jpg",
+  "imagen3": "../movies/elEspecialista3.jpg",
   "link": "4k8I5TtURG8?si=qgMz26rwxJRL6H0h"
  },
  {
@@ -33,9 +33,9 @@
   "descripcion": "Solène, madre soltera de 40 años, inicia un romance inesperado con Hayes Campbell, el joven líder de la famosa banda August Moon.",
   "tiempo": "1h 99m",
   "anio": 2024,
-  "imagen1": ".\/movies\/laIdeaDeTenerte1.jpg",
-  "imagen2": ".\/movies\/laIdeaDeTenerte2.jpg",
-  "imagen3": ".\/movies\/laIdeaDeTenerte3.jpg",
+  "imagen1": "../movies/laIdeaDeTenerte1.jpg",
+  "imagen2": "../movies/laIdeaDeTenerte2.jpg",
+  "imagen3": "../movies/laIdeaDeTenerte3.jpg",
   "link": "hZKyOMGwAwA?si=Y9YsjZg5bXl9B7p_"
  },
  {
@@ -46,9 +46,9 @@
   "descripcion": "Sintel cuenta la historia de una chica y su amistad con un bebé dragón, y los desesperados extremos a los que llegará cuando esa amistad le sea arrebatada.",
   "tiempo": "14m 48s",
   "anio": 2010,
-  "imagen1": ".\/movies\/sintel1.jpg",
-  "imagen2": ".\/movies\/sintel2.jpg",
-  "imagen3": ".\/movies\/sintel3.jpg",
+  "imagen1": "../movies/sintel1.jpg",
+  "imagen2": "../movies/sintel2.jpg",
+  "imagen3": "../movies/sintel3.jpg",
   "link": "eRsGyueVLvQ?si=ZO7u0piOidKM1qSV"
  }
 ]
