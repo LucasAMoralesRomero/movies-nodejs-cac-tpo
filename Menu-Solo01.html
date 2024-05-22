@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@500&display=swap');
+  
+:root {
+  --ColorEncabezado: #948f92;
+  --ColorFondo: #dfded9;
+  --ColorFuente: #6b0d0e;
+  --ColorLink: #09c71c;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-family: 'Sarabun', sans-serif;
+  }
+
+.Menu-Principal {
+  display: flex;
+  justify-content: space-around;
+  align-items:flex-startspace-between;
+	max-width: 500px;
+	margin: auto;
+	background-color: var(--ColorEncabezado);
+	margin-top: 1px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:var(--ColorEncabezado);
+}
+
+li {
+  float:left;
+}
+
+li a, .DespleBoton {
+  display: inline-block;
+  color: var(--ColorFuente);
+  font-size:20px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+
+li a:hover , .Desplegable:hover .DespleBoton{
+  color: var(--ColorLink); 
+  transition: all 0.4s;
+}
+
+.Desplegable-Contenido {
+  display: none;
+  position: absolute;
+  background-color: var(--ColorEncabezado);
+  }
+
+.Desplegable-Contenido a {
+  color: var(--ColorFuente);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.Desplegable-Contenido a:hover {
+  background-color: var(--ColorEncabezado);
+  color: var(--ColorLink);
+  transition: all 0.4s; 
+}
+
+.Desplegable:hover .Desplegable-Contenido {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+  <nav class="Menu-Principal">
+  <ul>
+  <li><a href="#">Inicio</a></li>
+  <li class="Desplegable">
+    <a href="#" class="DespleBoton">Películas</a>
+
+    <div class="Desplegable-Contenido">
+      <a href="#">Novedades</a>
+      <a href="#">Comedia</a>
+      <a href="#">Drama</a>
+      <a href="#">Accion</a>
+    </div>
+
+  </li>
+
+  <li><a href="#">Asociarse</a></li>
+  <li><a href="#">Acerca de</a></li>
+
+</ul>
+</nav>
+
+<h1>Ejemplo de menú desplegable</h1>
+<h2>Si quieren cambiar algo no hay problema</h2>
+<h3>Los colores se cambian desde :root {</h3>
+<h3>Los generos de peliculas son a modo de ejemplo: Donde dice class="Desplegable-Contenido", agregar una linea con el genero que quieran</h3>  
+<h3>Esto va dentro del encabezado, mas tarde veo si funciona</h3>
+<h3>M egustaría que haya una transición del menú que baja, pero no lo logré</h3>
+<h3>Saludos</h3>
+</body>
+</html>
+
+ 
+	<style>
+  
+
+
+/* .menu-horizontal{
+	list-style: none;
+	display: flex;
+	justify-Contenido: space-around;
+}
+.menu-horizontal > li > a{
+	display: block;
+	padding: 10px 20px;
+	color: var(--ColorFuente);
+	text-decoration: none;
+}
+.menu-horizontal > li:hover{
+  color: var(--ColorLink);
+  transform: scale(1.4);
+  transition: all 0.4s; */
+ 
+	 /* background-color: red;  */
+
+/* }
+.menu-vertical{
+	position: absolute;
+	display: none;
+
+	list-style: none;
+	width: auto;
+  color: var(--ColorFuente);
+	background-color: var(--ColorEncabezado);/*rgba(0, 0, 0, .5);  */
+  /*
+}
+.menu-horizontal li:hover .menu-vertical{
+	
+	display: block;
+}
+.menu-vertical li:hover{
+	
+	 background-color: black; 
+  transform: scale(1.05);
+  transition: all 0.3s; 
+  color: var(--ColorLink);
+} 
+
+.menu-vertical li a{
+	
+	 
+	font-size:20px; 
+	display: block;
+	color: var(--Colorfuente);white;
+	text-decoration: none;
+	padding: 15px 15px 15px 20px;
+  padding: 15px 5px 5px 5px;
+
+} */
+
+  /*
+#html{
+	margin: auto;
+	padding: 20px;
+	max-width: 900px;
+	background: white;
+}*/
+
+	/* <nav>
+		<ul class="menu-horizontal">
+			<li><a href="#">Peliculas</a>
+				<ul class="menu-vertical">
+					<li><a href="">Novedades</a></li>
+					<li><a href="#">Comedia</a></li>
+					<li><a href="#">Accion</a></li>
+				</ul>
+			</li>
+      <li><a href="#">Asociarse</a></li>
+			<li><a href="#">Acerca de</a></li>
+			<li><a href="#">Contacto</a></li>
+
+		</ul>
+	</nav> */
