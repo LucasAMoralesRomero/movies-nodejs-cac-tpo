@@ -21,13 +21,15 @@ function displayMovies(){
         templateMovieCard +=
       `
       <div>
-      <img class="contenedor-img" src="${event.imagen1}" alt=""
+      <img class="contenedor-img hover-1" src="${event.imagen1}" alt=""
       onmouseover="this.src='${event.imagen2}'"
       onmouseout="this.src='${event.imagen1}'">
+      <div class="mascara">
       <h4 class="movieTitle">${event.pelicula}</h4>
       <h5 class="genero">${event.genero1} ${event.genero2} ${event.genero3}</h5>
       <h5 class="anio">${event.anio}</h5>
       <p class="movieDescription">${event.descripcion}</p>
+      </div>
       </div>
       `
     })
