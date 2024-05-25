@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codo a Codo - Comision #24136 - Grupo 8</title>
+
+    <link rel="ICON" type="iMAGEN/PNG" href="img/favicon.svg">
+
+    <link rel="stylesheet" href="css/Index1.css"> <!-- Script para menu y pagina principal  -->
+    <link rel="stylesheet" href="css/Hover01.css"><!-- Script para las miniaturas de las imágenes  -->
+
+    <script src="https://kit.fontawesome.com/b8f5b7d805.js" crossorigin="anonymous"></script> <!-- Script para los iconos de redes sociales  -->
+    <script src="js/Index03.js" defer></script>  <!-- Script del Menu Hamburguesa  -->
+    
+
+</head>
+
+<body>
+<!-- Encabezado   -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/LogoCAC.png" alt="">
+        </div>
+
+        <div class="toggle-btn">
+            <div class="icon"></div>
+        </div>
+
+<!-- Menú -->
+        <div>
+          <ul class="menu">
+              <li><a href="#">Inicio</a></li>
+              <!-- <li><a href="#">About</a></li> -->
+              <li class="submenu-wrapper">
+                  <a href="#" onclick="mostrarValor('Todas')">Peliculas<span> > </span>
+                  </a>
+                  <ul class="submenu">
+                      <li><a href="#" onclick="mostrarValor('accion')">Acción</a></li>
+                      <li><a href="#" onclick="mostrarValor('animacion')">Animación</a></li>
+                      <li><a href="#" onclick="mostrarValor('ciencia ficcion')">C. Ficción</a></li>
+                      <li><a href="#" onclick="mostrarValor('drama')">Drama</a></li>
+                      <li><a href="#" onclick="mostrarValor('comedia')">Comedia</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Asociarse</a></li>
+              <li><a href="#">Acerca de</a></li>
+          </ul>
+      </div>
+    </nav>
+    
+<!-- Cuerpo  -->   
+
+
+    <nav class="Galeria">
+
+      <div id="resultados"></div>
+
+      <div class="gallery">
+        <div class="grid">
+          <div class="grid" id="json-container"></div>
+        </div>
+    </div>    
+
+    </nav>
+    
+   
+      <!-----Footer----->
+
+  <nav class="pie-pagina">
+
+      <div class="logo-Pie">
+          <img src="img/LogoBA.svg" alt="Logo marca"> 
+      </div>
+      
+      <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+      </ul>
+
+      <div class="derechos">
+      <p>&copy; #24136 - Grupo 8 - 2024</p>
+      </div>
+  </nav> 
+</body>
+</html>
