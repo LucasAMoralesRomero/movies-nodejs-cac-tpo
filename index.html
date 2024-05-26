@@ -1,96 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>    
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Codo a Codo - Comision #24136 - Grupo 8 </title>
-    
-    <link rel="ICON" type="iMAGEN/PNG" href="img\favicon.svg">
+    <title>Codo a Codo - Comision #24136 - Grupo 8</title>
 
-    <link rel="stylesheet" href="css\styleFC.css" />
+    <link rel="ICON" type="iMAGEN/PNG" href="img/favicon.svg">
 
-    <script src="https://kit.fontawesome.com/b8f5b7d805.js" crossorigin="anonymous"></script>
-    <script defer src="js\indexFC.js"></script>
-  </head>
+    <link rel="stylesheet" href="css/Index1.css"> <!-- Script para menu y pagina principal  -->
+    <link rel="stylesheet" href="css/Hover01.css"><!-- Script para las miniaturas de las imágenes  -->
+
+    <script src="https://kit.fontawesome.com/b8f5b7d805.js" crossorigin="anonymous"></script> <!-- Script para los iconos de redes sociales  -->
+    <script src="js/Index03.js" defer></script>  <!-- Script del Menu Hamburguesa  -->
+    
+
+</head>
 
 <body>
+<!-- Encabezado   -->
 
-
-<!--Encabezado-->
-<header class="header">
-
-      <nav class="nav-cabecera">
+    <nav class="navbar">
         <div class="logo">
-            <img src="img\LogoCAC.png" alt="Logo marca">
+            <img src="img/LogoCAC.png" alt="">
         </div>
 
-        <button class="nav-toggle" aria-label="Abre menú">
-          <i class="fas fa-bars"></i>
-        </button>
+        <div class="toggle-btn">
+            <div class="icon"></div>
+        </div>
 
-        <ul class="nav-menu">
-          <li class="nav-menu-item">
-            <a href="index.html" class="nav-menu-link">Peliculas</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="Asociarse.html" class="nav-menu-link">Asociarce</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="contacto.html" class="nav-menu-link">Contacto</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="acerca.html" class="nav-menu-link">Acerca de</a>
-          </li>
-        </ul>
-
-      </nav>
+<!-- Menú -->
+        <div>
+          <ul class="menu">
+              <li><a href="#" onclick="mostrarValor('Todas')"">Inicio</a></li>
+              <!-- <li><a href="#">About</a></li> -->
+              <li class="submenu-wrapper">
+                  <a href="#" onclick="mostrarValor('Todas')">Peliculas<span> > </span>
+                  </a>
+                  <ul class="submenu">
+                      <li><a href="#" onclick="mostrarValor('accion')">Acción</a></li>
+                      <li><a href="#" onclick="mostrarValor('animacion')">Animación</a></li>
+                      <li><a href="#" onclick="mostrarValor('ciencia ficcion')">C. Ficción</a></li>
+                      <li><a href="#" onclick="mostrarValor('drama')">Drama</a></li>
+                      <li><a href="#" onclick="mostrarValor('comedia')">Comedia</a></li>
+                  </ul>
+              </li>
+              <li><a href="./asociarse.html">Asociarse</a></li>
+              <li><a href="./acerca.html">Acerca de</a></li>
+          </ul>
+      </div>
+    </nav>
     
+<!-- Cuerpo  -->   
+
+
+    <nav class="Galeria">
+
+      <div id="resultados"></div>
+
+      <div class="gallery">
+        <div class="grid">
+          <div class="grid" id="json-container"></div>
+        </div>
+    </div>    
+
+    </nav>
     
-</header>
+   
+      <!-----Footer----->
 
+  <nav class="pie-pagina">
 
-<!-----Cuerpo Principal----->
+      <div class="logo-Pie">
+          <img src="img/LogoBA.svg" alt="Logo marca"> 
+      </div>
+      
+      <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+      </ul>
 
-
-    <body>
-        <nav class="Peliculas">
-            <div class="movieCard">
-
-            </div>
-        </nav>
-        <div class="Cuerpo">
-            <div class="grid">
-    
-                <div class="grid" id="movieCard">
-               
-                </div>
-            </div>
-        </div>
-</nav>
-
-
-
-<!-----Pie de Pagina----->
-
-    <footer class="pie-pagina">
-
-        <div class="logo-Pie">
-            <img src="img\LogoBA.svg" alt="Logo marca"> 
-        </div>
-        
-        <ul class="socials">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-        </ul>
-
-        <div class="derechos">
-        <p>&copy; #24136 - Grupo 8 - 2024</p>
-        </div>
-    </footer>
-    <script src="./js/movies.js"></script>
+      <div class="derechos">
+      <p>&copy; #24136 - Grupo 8 - 2024</p>
+      </div>
+  </nav> 
 </body>
 </html>
