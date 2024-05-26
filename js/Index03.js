@@ -23,7 +23,7 @@ function mostrarValor(valor) {
     //var valor = 'Todas';
   
     // Pido el archivo json con los datos
-    var ArcJson = 'Movies3.json'
+    var ArcJson = 'Movies4.json'
     fetch(ArcJson)
       .then(response => response.json())
       .then(data => {
@@ -51,7 +51,7 @@ function mostrarValor(valor) {
             <div class="mascara">
               <h2>${item.pelicula}</h2>
               <p>${item.descripcion}</p>
-              <a href=${item.link} class="link">Ver Trailer</a>
+              <a href=${item.link} class="link" target="_blank">Ver Trailer</a>
             </div>
           </div>
         `;
