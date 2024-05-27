@@ -221,8 +221,8 @@
   "link": "efimera.html?pirulo=Peli01.html"
  },
  {
-  "pelicula": "La la land",
-  "genero1": "comedia",
+  "pelicula": "Nov La la land",
+  "genero1": "novedades",
   "genero2": "drama",
   "genero3": "romance",
   "descripcion": "Un músico de jazz y una aspirante a actriz se enamoran mientras persiguen sus sueños en Los Ángeles.",
@@ -234,8 +234,8 @@
   "link": "efimera.html?pirulo=Peli02.html"
  },
  {
-  "pelicula": "La llegada",
-  "genero1": "ciencia ficcion",
+  "pelicula": "Nov La llegada",
+  "genero1": "novedades",
   "genero2": "drama",
   "genero3": "misterio",
   "descripcion": "Una lingüista es reclutada para comunicarse con extraterrestres que han llegado a la Tierra.",
@@ -247,8 +247,8 @@
   "link": "efimera.html?pirulo=Peli03.html"
  },
  {
-  "pelicula": "La red social",
-  "genero1": "drama",
+  "pelicula": "Nov La red social",
+  "genero1": "novedades",
   "genero2": "biografia",
   "genero3": "historia",
   "descripcion": "La historia de cómo Mark Zuckerberg creó Facebook y enfrentó problemas legales y personales.",
@@ -274,7 +274,7 @@
  },
  {
   "pelicula": "Misterio en la mansión",
-  "genero1": "comedia",
+  "genero1": "novedades",
   "genero2": "suspenso",
   "genero3": "drama",
   "descripcion": "Un detective investiga una serie de asesinatos en una antigua mansión llena de secretos.",
@@ -300,7 +300,7 @@
  },
  {
   "pelicula": "Rivales",
-  "genero1": "comedia",
+  "genero1": "novedades",
   "genero2": "romance",
   "genero3": "deporte",
   "descripcion": "Tres tenistas reviven viejas rivalidades dentro y fuera de la pista mientras compiten por el prestigioso título del Grand Slam.",
@@ -313,7 +313,7 @@
  },
  {
   "pelicula": "Romance en París",
-  "genero1": "drama",
+  "genero1": "novedades",
   "genero2": "drama",
   "genero3": "comedia",
   "descripcion": "Dos desconocidos se enamoran en las calles de París y deben enfrentar diversos obstáculos para estar juntos.",
@@ -326,7 +326,7 @@
  },
  {
   "pelicula": "Sintel",
-  "genero1": "animacion",
+  "genero1": "novedades",
   "genero2": "corto",
   "genero3": "aventura",
   "descripcion": "Sintel cuenta la historia de una chica y su amistad con un bebé dragón, y los desesperados extremos a los que llegará cuando esa amistad le sea arrebatada.",
