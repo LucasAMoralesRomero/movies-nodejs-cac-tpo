@@ -14,7 +14,7 @@ document.querySelector('.toggle-btn').addEventListener('click', function () {
     toggleNavbar();
 });
 
-/****************Hover****************************/
+/****************Hover de peliculas****************************/
 
 function mostrarValor(valor) {
 
@@ -31,7 +31,7 @@ function mostrarValor(valor) {
   
         // Filtrar por el género seleccionado (si son 'Todas' quito el filtro)
         if(valor ==='Todas'){
-          var PelisFiltradas = data;
+          var PelisFiltradas = data.filter(item => item.genero1 != 'novedades');
         }
         else  var PelisFiltradas = data.filter(item => item.genero1 === valor);
         
@@ -67,3 +67,56 @@ function mostrarValor(valor) {
       });
      
   }
+
+  /****************Hover de Novedades****************************/
+
+function mostrarNovedades(valor) {
+
+  var generoSeleccionado = valor; // esto es lo que traigo desde el menú
+  var resultados = document.getElementById('resultados'); //esto es donde voy a escribir el html
+  //var valor = 'Todas';
+
+  // Pido el archivo json con los datos
+  var ArcJson = 'Movies4.json'
+  fetch(ArcJson)
+    .then(response => response.json())
+    .then(data => {
+      
+
+      // Filtrar por el género seleccionado (si son 'Todas' quito el filtro)
+      //if(valor ==='Todas'){
+      //  var PelisFiltradas = data;
+      //}
+      //else  
+      var PelisFiltradas = data.filter(item => item.genero1 === 'novedades');
+            var jsonContainer = document.getElementById('json-container');  
+      jsonContainer.innerHTML = ''; //Esto limpia el html
+      
+
+      if (PelisFiltradas.length > 0) {
+        PelisFiltradas.forEach(item => {
+          
+        //Esta es la magia: escribo html!
+
+          var Nhtml = `
+        <div class="contenedor-img hover-1">
+          <img src="${item.imagen1}" />
+          <div class="mascara">
+            <h2>${item.pelicula}</h2>
+            <p>${item.descripcion}</p>
+            <h1>Proximamente</h1>
+          </div>
+        </div>
+      `;
+
+      jsonContainer.innerHTML += Nhtml; // Agrega lo escrito
+
+      });
+      }
+      })
+
+    .catch(error => {
+      alert('Error al leer el archivo ' + ArcJson); //Aviso si el Json no se encontró
+    });
+   
+}
