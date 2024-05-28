@@ -206,6 +206,65 @@ body {
     
 }
 
+ /***** Acerca *****/
+ .Acerca{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: center;
+    padding: 5% 5%;  
+    /*color gris oscuro para el texto de acercade*/ 
+    color: rgb(79, 79, 79);
+  }
+  
+
+  .Cuerpo .Acerca li{
+    list-style: none;
+  }
+  
+  .Imagen-Acerca img{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    padding: 5% 5%;
+  }
+  
+  .Texto-Acerca img{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    padding: 5% 5%;
+  }
+  /***** asociarse formulario *****/
+
+  .formRegistro {
+    width: 70%;
+    margin: 0 auto;
+     /*color gris oscuro para el texto de acercade*/ 
+     color: rgb(79, 79, 79);
+  }
+  
+  .tituloRegistro {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+  }
+  
+  .labelSexo {
+    padding-left: 0px;
+  }
+  
+  .form-floating,
+  .form-select {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    margin: 25px;
+  }
+  
+
 /***** Footer *****/
 
 .pie-pagina {
