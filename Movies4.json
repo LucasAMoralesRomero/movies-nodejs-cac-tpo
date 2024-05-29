@@ -1,6 +1,6 @@
 [
  {
-  "pelicula": "XXAvatar",
+  "pelicula": "Avatar",
   "genero1": "ciencia ficcion",
   "genero2": "aventura",
   "genero3": "accion",
@@ -10,10 +10,10 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "VerPeli1.html?link=https://www.youtube.com/embed/NCX5myVeK0I?si=X71FNwGtTpo6Ro6O"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/g5deg0HgCmY?si=GsHiNaNEhZdII5l5"
  },
  {
-  "pelicula": "XXAventura Espacial",
+  "pelicula": "Aventura Espacial",
   "genero1": "ciencia ficcion",
   "genero2": "accion",
   "genero3": "aventura",
@@ -26,7 +26,7 @@
   "link": "VerPeli1.html?link=https://www.youtube.com/embed/NCX5myVeK0I?si=X71FNwGtTpo6Ro6O"
  },
  {
-  "pelicula": "XXCoco",
+  "pelicula": "Coco",
   "genero1": "animacion",
   "genero2": "aventura",
   "genero3": "familia",
@@ -36,10 +36,10 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "VerPeli1.html?link=https://www.youtube.com/embed/NCX5myVeK0I?si=X71FNwGtTpo6Ro6O"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/awzWdtCezDo?si=oq6AcLvnfLvUU1N4"
  },
  {
-  "pelicula": "XXEl caballero oscuro",
+  "pelicula": "El caballero oscuro",
   "genero1": "accion",
   "genero2": "crimen",
   "genero3": "drama",
@@ -49,7 +49,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "VerPeli1.html?link=https://www.youtube.com/embed/NCX5myVeK0I?si=X71FNwGtTpo6Ro6O"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/kj7urtvmwrY?si=wF6Vyp-daSrRKD0b"
  },
  {
   "pelicula": "El código enigma",
@@ -62,7 +62,7 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/zXKHGaRxQaE?si=gItqNL32gAN2M_Lz"
  },
  {
   "pelicula": "El especialista",
@@ -75,7 +75,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/elEspecialista2.jpg",
   "imagen3": "./img/movies/elEspecialista3.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=EzdB0_2kWFCZWeN"
  },
  {
   "pelicula": "El padrino",
@@ -88,7 +88,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/iOyQx7MXaz0?si=tVPP8Lyc0iD87QYa"
  },
  {
   "pelicula": "El pianista",
@@ -101,7 +101,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/BFwGqLa_oAo?si=jbwUfoW3j7oECWgF"
  },
  {
   "pelicula": "El rey león",
@@ -114,7 +114,7 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/bjJvvrKl83M?si=HI5QvplyPplUBI5u"
  },
  {
   "pelicula": "El silencio de los inocentes",
@@ -127,7 +127,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/6iB21hsprAQ?si=_7oCUhx0nVAGQnbe"
  },
  {
   "pelicula": "El último samurái",
@@ -140,7 +140,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/pcy7akchofw?si=qew_dqFwtBhU8jsS"
  },
  {
   "pelicula": "Forrest Gump",
@@ -153,7 +153,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Gladiador",
@@ -166,7 +166,7 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Inception",
@@ -179,7 +179,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Intensamente",
@@ -192,7 +192,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Interestelar",
@@ -205,7 +205,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "La idea de tenerte",
@@ -218,7 +218,7 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/laIdeaDeTenerte2.jpg",
   "imagen3": "./img/movies/laIdeaDeTenerte3.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Nov La la land",
@@ -231,7 +231,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Nov La llegada",
@@ -244,7 +244,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Nov La red social",
@@ -257,7 +257,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Matrix",
@@ -270,7 +270,7 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Misterio en la mansión",
@@ -283,7 +283,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Pulp Fiction",
@@ -296,7 +296,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Rivales",
@@ -309,7 +309,7 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/rivales2.jpg",
   "imagen3": "./img/movies/rivales3.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Romance en París",
@@ -322,11 +322,11 @@
   "imagen1": "./img/peli01.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli01.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Sintel",
-  "genero1": "novedades",
+  "genero1": "animacion",
   "genero2": "corto",
   "genero3": "aventura",
   "descripcion": "Sintel cuenta la historia de una chica y su amistad con un bebé dragón, y los desesperados extremos a los que llegará cuando esa amistad le sea arrebatada.",
@@ -335,7 +335,7 @@
   "imagen1": "./img/peli02.jpg",
   "imagen2": "./img/movies/sintel2.jpg",
   "imagen3": "./img/movies/sintel3.jpg",
-  "link": "efimera.html?pirulo=Peli02.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/Jx524zonbBo?si=Ovt8arRWpVlqpVwc"
  },
  {
   "pelicula": "Sueños de libertad",
@@ -348,7 +348,7 @@
   "imagen1": "./img/peli03.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli03.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  },
  {
   "pelicula": "Viviendo al límite",
@@ -361,6 +361,6 @@
   "imagen1": "./img/peli04.jpg",
   "imagen2": "./img/movies/default.jpg",
   "imagen3": "./img/movies/default.jpg",
-  "link": "efimera.html?pirulo=Peli04.html"
+  "link": "VerPeli1.html?link=https://www.youtube.com/embed/4k8I5TtURG8?si=r4rT1BaaO1531NQj"
  }
 ]
