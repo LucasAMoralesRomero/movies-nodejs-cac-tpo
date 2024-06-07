@@ -23,6 +23,8 @@ use movies;
         imagen1 varchar (42),
         imagen2 varchar (42),
         imagen3 varchar (42),
-        link varchar (80)
+        link varchar (80),
+        -- bool si es estreno
+        estreno bool
         );
 
