@@ -15,7 +15,7 @@ use movies;
  create table director 
    (
         id int not null primary key auto_increment,
-        nombre varchar (30) not null,
+        nombre_director varchar (30) not null,
         
    );
 
@@ -29,6 +29,8 @@ use movies;
         id_genero int,
         foreign key (id_genero) references generos (id),
         anio year,
+        nombre_director varchar (30),
+        foreign key (nombre_director) references director (id),
         -- 42 para imagen 80 para link
         imagen1 varchar (42),
         imagen2 varchar (42),
