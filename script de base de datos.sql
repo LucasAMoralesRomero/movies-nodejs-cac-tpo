@@ -11,6 +11,16 @@ use movies;
 
 -- usamos la base de datos
 use movies;
+-- creamos la tabla director (contiene el id  y el nombre del director)
+ create table director 
+   (
+        id int not null primary key auto_increment,
+        nombre varchar (30) not null,
+        
+   );
+
+-- usamos la base de datos
+use movies;
 -- creamos la tabla pelicula
 	create table pelicula
 		(
