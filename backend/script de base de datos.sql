@@ -40,3 +40,13 @@ use movies;
         estreno bool
         );
 
+-- usamos la base de datos
+use movies;
+-- creamos la tabla descripcion para guardar la descripcion de la pelicula
+  create table descripcion 
+    (
+        id int not null primary key auto_increment,
+        id_movie int,
+        descripcion tinytext,
+        foreign key (id_movie) references pelicula(id)
+        );
