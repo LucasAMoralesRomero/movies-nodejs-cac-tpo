@@ -15,7 +15,7 @@ use movies;
  create table director 
    (
         id int not null primary key auto_increment,
-        nombre_director varchar (30) not null,
+        nombre_director varchar (30) not null
         
    );
 
