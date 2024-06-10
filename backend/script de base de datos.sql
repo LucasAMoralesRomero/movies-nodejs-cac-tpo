@@ -50,3 +50,23 @@ use movies;
         descripcion tinytext,
         foreign key (id_movie) references pelicula(id)
         );
+-- usamos la base de datos
+use movies;
+-- creamos la tabla de actores
+	create table actors(
+		id int not null primary key auto_increment,
+        nombre_actor varchar(50),
+        descricion text
+    );
+-- usamos la base de datos
+use movies;
+-- creamos la tabla de personajes (vincula al actor con el personaje y la pelicula)
+		create table personajes(
+        id int not null primary key auto_increment,
+        id_movie int,
+        id_actor int,
+        personaje varchar (30),
+        -- creamos las fk para movies y actor
+        foreign key (id_movie) references pelicula(id),
+        foreign key (id_actor) references actors(id)
+	);
