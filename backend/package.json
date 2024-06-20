@@ -2,13 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend de aplicacion movies",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Lucas Agustin Morales R",
+  "author": "Lucas Agustin Morales Romero",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mysql2": "^3.10.1",
+    "nodemon": "^3.1.4"
   }
 }
