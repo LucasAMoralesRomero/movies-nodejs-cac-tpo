@@ -8,4 +8,8 @@ const getAllMovies = (req, res) => {
         if (err) throw err;
         res.json(results);
     }); 
-};git 
+};
+
+module.exports = {
+    getAllMovies
+}
