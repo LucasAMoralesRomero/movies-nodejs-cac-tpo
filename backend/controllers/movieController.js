@@ -32,8 +32,19 @@ const createMovie = (req, res) => {
     });
 }
 
+const updateMovie = (req, res) => {
+    const { id } = req.params;
+    const {titulo, id_genero, anio, id_director, imagen1, imagen2, imagen3, link, estreno} = req.body;
+    const sql = 'UPDATE movies.pelicula SET titulo = ?, id_genero = ?, anio = ?, id_director = ?, imagen1 = ?, imagen2 = ?, imagen3 = ?, link = ?, estreno = ? WHERE id = ?';
+    db.query(sql, [titulo, id_genero, anio, id_director, imagen1, imagen2, imagen3, link, estreno, id], (err, results) => {
+        if (err) throw err;
+        res.json({message: 'Pelicula actualizada exitosamente'});
+    });
+}
+
 module.exports = {
     getAllMovies,
     getMovieById,
-    createMovie
+    createMovie,
+    updateMovie
 };
