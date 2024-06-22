@@ -40,11 +40,24 @@ const updateMovie = (req, res) => {
         if (err) throw err;
         res.json({message: 'Pelicula actualizada exitosamente'});
     });
+
 }
+
+const deleteMovie = (req,res) => {
+    const { id } = req.params;
+    const sql = 'DELETE FROM movies.pelicula WHERE id = ?';
+    db.query(sql, [id], (err, results) => {
+        if (err) throw err;
+        res.json({message: 'Pelicula eliminada exitosamente'});
+    });
+}
+
+
 
 module.exports = {
     getAllMovies,
     getMovieById,
     createMovie,
-    updateMovie
+    updateMovie,
+    deleteMovie
 };
