@@ -10,6 +10,16 @@ const getAllMovies = (req, res) => {
     }); 
 };
 
-module.exports = {
-    getAllMovies
+const getMovieById = (req, res) => {
+    const { id } = req.params;
+    const sql = 'SELECT * FROM movies.pelicula HERE id = ?';
+    db.query(sql,[id], (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
 }
+
+module.exports = {
+    getAllMovies,
+    getMovieById
+};
