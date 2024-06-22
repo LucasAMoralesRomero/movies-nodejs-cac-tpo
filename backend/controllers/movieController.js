@@ -14,7 +14,7 @@ const getAllMovies = (req, res) => {
 
 const getMovieById = (req, res) => {
     const { id } = req.params;
-    const sql = 'SELECT * FROM movies.pelicula HERE id = ?';
+    const sql = 'SELECT * FROM movies.pelicula WHERE id = ?';
     db.query(sql,[id], (err, results) => {
         if (err) throw err;
         res.json(results);
