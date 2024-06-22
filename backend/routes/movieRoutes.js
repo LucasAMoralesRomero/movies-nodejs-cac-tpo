@@ -6,6 +6,9 @@ const movieController = require('../controllers/movieController');
 //se obtinen todas las peliculas
 router.get('/', movieController.getAllMovies);
 
+//se obtienen los generos
+router.get('/genres', movieController.getAllGenres);
+
 //se obtiene una pelicula por id
 router.get('/:id', movieController.getMovieById);
 
