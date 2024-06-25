@@ -9,6 +9,9 @@ router.get('/', movieController.getAllMovies);
 //se obtienen los generos
 router.get('/genres', movieController.getAllGenres);
 
+//se obtienen los directores   
+router.get('/directors', movieController.getAllDirectors);
+
 //se obtiene una pelicula por id
 router.get('/:id', movieController.getMovieById);
 
