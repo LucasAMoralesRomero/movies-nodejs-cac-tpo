@@ -29,6 +29,14 @@ const getAllGenres = (req, res) => {
     }); 
 };
 
+const getAllDirectors = (req, res) => {
+    const sql = 'SELECT * FROM movies.director';
+    db.query(sql, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    }); 
+};
+
 /* Controladores de ABM*/
 
 const createMovie = (req, res) => {
@@ -66,6 +74,7 @@ module.exports = {
     getAllMovies,
     getMovieById,
     getAllGenres,
+    getAllDirectors,
     createMovie,
     updateMovie,
     deleteMovie
