@@ -11,19 +11,19 @@ CREATE TABLE genres (
 -- Creamos la tabla de directores (directors)
 CREATE TABLE directors (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    director_name VARCHAR(100) NOT NULL
 );
 
 -- Creamos la tabla de escritores (scriptwriters)
 CREATE TABLE scriptwriters (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    scriptwriter_name VARCHAR(100) NOT NULL
 );
 
 -- Creamos la tabla de actores (casting)
 CREATE TABLE casting (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    casting_name VARCHAR(100) NOT NULL
 );
 
 -- Creamos la tabla de videos de YouTube (video)
