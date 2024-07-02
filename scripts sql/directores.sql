@@ -1,5 +1,5 @@
 USE movies_new;
-INSERT INTO directors (director)
+INSERT INTO directors (director_name)
 Values 
 ('James Cameron'),
 ('Lee Unkrich'),
