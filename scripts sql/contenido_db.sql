@@ -122,7 +122,7 @@ SET @link_id = (SELECT id FROM links WHERE facebook_url = 'https://www.facebook.
 
 -- Inserting movie details and retrieving its ID
 INSERT INTO movies (title, year_release, image_bg, image_poster, overview, budget, revenue, movie_status, original_language)
-VALUES ('Headspace', 2023, '/imagesheadspace_bg.jpg', '/images/headspace_poster.jpg', 'Después de perseguir al malvado Zolthard a través de un agujero de gusano, tres extraterrestres quedan varados en el cerebro de Norman, de 16 años.', 1000000, 1457277, 'Released', 'English');
+VALUES ('Headspace', 2023, '/images/headspace_bg.jpg', '/images/headspace_poster.jpg', 'Después de perseguir al malvado Zolthard a través de un agujero de gusano, tres extraterrestres quedan varados en el cerebro de Norman, de 16 años.', 1000000, 1457277, 'Released', 'English');
 SET @movie_id = LAST_INSERT_ID();
 
 -- Linking the movie with genres, directors, scriptwriters, casting, videos, and links
@@ -198,7 +198,7 @@ SET @link_id = (SELECT id FROM links WHERE facebook_url = 'https://www.facebook.
 
 -- Inserting movie details and retrieving its ID
 INSERT INTO movies (title, year_release, image_bg, image_poster, overview, budget, revenue, movie_status, original_language)
-VALUES ('Coco', 2017, '/coco_bg.jpg', '/images/coco_poster.jpg', 'El aspirante a músico Miguel, entra a la Tierra de los Muertos para encontrar a su tatarabuelo, un legendario cantante.', 175000000, 807082196, 'Released', 'English');
+VALUES ('Coco', 2017, '/images/coco_bg.jpg', '/images/coco_poster.jpg', 'El aspirante a músico Miguel, entra a la Tierra de los Muertos para encontrar a su tatarabuelo, un legendario cantante.', 175000000, 807082196, 'Released', 'English');
 SET @movie_id = LAST_INSERT_ID();
 
 -- Linking the movie with genres, directors, scriptwriters, casting, videos, and links
@@ -213,6 +213,80 @@ SELECT @movie_id, id FROM scriptwriters WHERE scriptwriter_name IN ('Lee Unkrich
 
 INSERT INTO movie_casting (movie_id, casting_id)
 SELECT @movie_id, id FROM casting WHERE casting_name IN ('Anthony Gonzalez', 'Gael García Bernal', 'Benjamin Bratt');
+
+-- Linking the movie with video
+INSERT INTO movie_videos (movie_id, video_id)
+VALUES (@movie_id, @video_id);
+
+-- Linking the movie with links
+INSERT INTO movie_links (movie_id, link_id)
+VALUES (@movie_id, @link_id);
+
+-- the dark knight 2008
+USE movies_new;
+
+-- Inserting directors if they do not already exist
+INSERT INTO directors (director_name)
+SELECT 'Christopher Nolan' WHERE NOT EXISTS (SELECT 1 FROM directors WHERE director_name = 'Christopher Nolan');
+
+-- Insertando géneros si no existen
+INSERT INTO genres (genre)
+SELECT 'Acción' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Acción');
+INSERT INTO genres (genre)
+SELECT 'Crimen' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Crimen');
+INSERT INTO genres (genre)
+SELECT 'Drama' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Drama');
+
+-- Inserting scriptwriters if they do not already exist
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'Jonathan Nolan' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'Jonathan Nolan');
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'Christopher Nolan' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'Christopher Nolan');
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'David S. Goyer' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'David S. Goyer');
+
+-- Inserting casting if they do not already exist
+INSERT INTO casting (casting_name)
+SELECT 'Christian Bale' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Christian Bale');
+INSERT INTO casting (casting_name)
+SELECT 'Heath Ledger' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Heath Ledger');
+INSERT INTO casting (casting_name)
+SELECT 'Aaron Eckhart' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Aaron Eckhart');
+
+-- Inserting video if it does not already exist and retrieving its ID
+INSERT INTO videos (video_url)
+SELECT 'https://www.youtube.com/watch?v=Y6NcC2FHecg' WHERE NOT EXISTS (SELECT 1 FROM videos WHERE video_url = 'https://www.youtube.com/watch?v=Y6NcC2FHecg');
+SET @video_id = (SELECT id FROM videos WHERE video_url = 'https://www.youtube.com/watch?v=Y6NcC2FHecg');
+
+-- Inserting links to social media if they do not already exist and retrieving its ID
+INSERT INTO links (facebook_url, twitter_url, instagram_url, web_url)
+SELECT 'https://www.facebook.com/warnerbrosent/', 'https://twitter.com/Warnerbros/', 'https://www.instagram.com/warnerbrosentertainment/', 'https://www.warnerbros.com/movies/dark-knight'
+WHERE NOT EXISTS (
+    SELECT 1 FROM links
+    WHERE facebook_url = 'https://www.facebook.com/warnerbrosent/'
+    AND twitter_url = 'https://twitter.com/Warnerbros/'
+    AND instagram_url = 'https://www.instagram.com/warnerbrosentertainment/'
+    AND web_url = 'https://www.warnerbros.com/movies/dark-knight'
+);
+SET @link_id = (SELECT id FROM links WHERE facebook_url = 'https://www.facebook.com/warnerbrosent/' AND twitter_url = 'https://twitter.com/Warnerbros/' AND instagram_url = 'https://www.instagram.com/warnerbrosentertainment/' AND web_url = 'https://www.warnerbros.com/movies/dark-knight');
+
+-- Inserting movie details and retrieving its ID
+INSERT INTO movies (title, year_release, image_bg, image_poster, overview, budget, revenue, movie_status, original_language)
+VALUES ('Batman: El caballero de la noche', 2008, '/images/batman_2008_bg.jpg', '/images/batman_2008_poster.jpg', 'Cuando el Joker emerge causando caos y violencia en Gotham, el caballero de la noches deberá aceptar una de las pruebas psicológicas y físicas más difíciles para poder luchar con las injusticias del enemigo.', 185000000, 1006000000, 'Released', 'English');
+SET @movie_id = LAST_INSERT_ID();
+
+-- Linking the movie with genres, directors, scriptwriters, casting, videos, and links
+INSERT INTO movie_genres (movie_id, genre_id)
+SELECT @movie_id, id FROM genres WHERE genre IN ('Acción', 'Crimen', 'Drama');
+
+INSERT INTO movie_directors (movie_id, director_id)
+SELECT @movie_id, id FROM directors WHERE director_name = 'Christopher Nolan';
+
+INSERT INTO movie_scriptwriters (movie_id, scriptwriter_id)
+SELECT @movie_id, id FROM scriptwriters WHERE scriptwriter_name IN ('Jonathan Nolan', 'Christopher Nolan', 'David S. Goyer');
+
+INSERT INTO movie_casting (movie_id, casting_id)
+SELECT @movie_id, id FROM casting WHERE casting_name IN ('Christian Bale', 'Heath Ledger', 'Aaron Eckhart');
 
 -- Linking the movie with video
 INSERT INTO movie_videos (movie_id, video_id)
