@@ -73,7 +73,15 @@ VALUES (@movie_id, @link_id);
 -- ---------------------------------------------------------------------spacehead 2023-------------------------------------------------------------------------------------------
 
 USE movies_new;
--- Inserting directors if they do not already exist
+
+-- Insertando géneros si no existen
+INSERT INTO genres (genre)
+SELECT 'Animación' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Animación');
+INSERT INTO genres (genre)
+SELECT 'Aventura' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Aventura');
+INSERT INTO genres (genre)
+SELECT 'Acción' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Acción');
+
 INSERT INTO directors (director_name)
 SELECT 'Paul Meyer' WHERE NOT EXISTS (SELECT 1 FROM directors WHERE director_name = 'Paul Meyer');
 INSERT INTO directors (director_name)
@@ -129,6 +137,82 @@ SELECT @movie_id, id FROM scriptwriters WHERE scriptwriter_name IN ('Daniel Buck
 
 INSERT INTO movie_casting (movie_id, casting_id)
 SELECT @movie_id, id FROM casting WHERE casting_name IN ('Bonko Khoza', 'Roberto Pombo', 'Chris van Rensburg');
+
+-- Linking the movie with video
+INSERT INTO movie_videos (movie_id, video_id)
+VALUES (@movie_id, @video_id);
+
+-- Linking the movie with links
+INSERT INTO movie_links (movie_id, link_id)
+VALUES (@movie_id, @link_id);
+
+-- coco -------------------------------------------------------------------
+USE movies_new;
+
+-- Inserting directors if they do not already exist
+INSERT INTO directors (director_name)
+SELECT 'Lee Unkrich' WHERE NOT EXISTS (SELECT 1 FROM directors WHERE director_name = 'Lee Unkrich');
+INSERT INTO directors (director_name)
+SELECT 'Adrian Molina' WHERE NOT EXISTS (SELECT 1 FROM directors WHERE director_name = 'Adrian Molina');
+
+-- Insertando géneros si no existen
+INSERT INTO genres (genre)
+SELECT 'Animación' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Animación');
+INSERT INTO genres (genre)
+SELECT 'Aventura' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Aventura');
+INSERT INTO genres (genre)
+SELECT 'Drama' WHERE NOT EXISTS (SELECT 1 FROM genres WHERE genre = 'Drama');
+
+-- Inserting scriptwriters if they do not already exist
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'Lee Unkrich' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'Lee Unkrich');
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'Jason Katz' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'Jason Katz');
+INSERT INTO scriptwriters (scriptwriter_name)
+SELECT 'Matthew Aldrich' WHERE NOT EXISTS (SELECT 1 FROM scriptwriters WHERE scriptwriter_name = 'Matthew Aldrich');
+
+-- Inserting casting if they do not already exist
+INSERT INTO casting (casting_name)
+SELECT 'Anthony Gonzalez' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Anthony Gonzalez');
+INSERT INTO casting (casting_name)
+SELECT 'Gael García Bernal' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Gael García Bernal');
+INSERT INTO casting (casting_name)
+SELECT 'Benjamin Bratt' WHERE NOT EXISTS (SELECT 1 FROM casting WHERE casting_name = 'Benjamin Bratt');
+
+-- Inserting video if it does not already exist and retrieving its ID
+INSERT INTO videos (video_url)
+SELECT 'https://www.youtube.com/watch?v=awzWdtCezDo' WHERE NOT EXISTS (SELECT 1 FROM videos WHERE video_url = 'https://www.youtube.com/watch?v=awzWdtCezDo');
+SET @video_id = (SELECT id FROM videos WHERE video_url = 'https://www.youtube.com/watch?v=awzWdtCezDo');
+
+-- Inserting links to social media if they do not already exist and retrieving its ID
+INSERT INTO links (facebook_url, twitter_url, instagram_url, web_url)
+SELECT 'https://www.facebook.com/PixarCoco/', 'https://x.com/pixarcoco', 'https://www.instagram.com/pixarcoco/', 'https://www.disneylatino.com/peliculas/disney-pixar-coco'
+WHERE NOT EXISTS (
+    SELECT 1 FROM links
+    WHERE facebook_url = 'https://www.facebook.com/PixarCoco/'
+    AND twitter_url = 'https://x.com/pixarcoco'
+    AND instagram_url = 'https://www.instagram.com/pixarcoco/'
+    AND web_url = 'https://www.disneylatino.com/peliculas/disney-pixar-coco'
+);
+SET @link_id = (SELECT id FROM links WHERE facebook_url = 'https://www.facebook.com/PixarCoco/' AND twitter_url = 'https://x.com/pixarcoco' AND instagram_url = 'https://www.instagram.com/pixarcoco/' AND web_url = 'https://www.disneylatino.com/peliculas/disney-pixar-coco');
+
+-- Inserting movie details and retrieving its ID
+INSERT INTO movies (title, year_release, image_bg, image_poster, overview, budget, revenue, movie_status, original_language)
+VALUES ('Coco', 2017, '/coco_bg.jpg', '/images/coco_poster.jpg', 'El aspirante a músico Miguel, entra a la Tierra de los Muertos para encontrar a su tatarabuelo, un legendario cantante.', 175000000, 807082196, 'Released', 'English');
+SET @movie_id = LAST_INSERT_ID();
+
+-- Linking the movie with genres, directors, scriptwriters, casting, videos, and links
+INSERT INTO movie_genres (movie_id, genre_id)
+SELECT @movie_id, id FROM genres WHERE genre IN ('Animación', 'Aventura', 'Drama');
+
+INSERT INTO movie_directors (movie_id, director_id)
+SELECT @movie_id, id FROM directors WHERE director_name IN ('Lee Unkrich', 'Adrian Molina');
+
+INSERT INTO movie_scriptwriters (movie_id, scriptwriter_id)
+SELECT @movie_id, id FROM scriptwriters WHERE scriptwriter_name IN ('Lee Unkrich', 'Jason Katz', 'Matthew Aldrich');
+
+INSERT INTO movie_casting (movie_id, casting_id)
+SELECT @movie_id, id FROM casting WHERE casting_name IN ('Anthony Gonzalez', 'Gael García Bernal', 'Benjamin Bratt');
 
 -- Linking the movie with video
 INSERT INTO movie_videos (movie_id, video_id)
