@@ -1,3 +1,4 @@
+
 -- Creamos la base de datos de películas
 CREATE DATABASE IF NOT EXISTS movies_new;
 USE movies_new;
@@ -35,10 +36,10 @@ CREATE TABLE videos (
 -- Creamos la tabla de enlaces a redes sociales (links)
 CREATE TABLE links (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    facebook_url VARCHAR(50),
-    twitter_url VARCHAR(50),
-    instagram_url VARCHAR(50),
-    web_url VARCHAR(50)
+    facebook_url VARCHAR(150),
+    twitter_url VARCHAR(150),
+    instagram_url VARCHAR(150),
+    web_url VARCHAR(150)
 );
 
 -- Creamos la tabla para las películas (movies)
