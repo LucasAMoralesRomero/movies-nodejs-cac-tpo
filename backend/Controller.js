@@ -22,6 +22,28 @@ const getAllMovies1 = (req, res) => {
     }); 
 };
 
+//Trae el listado de generos de la base
+const getGenero = (req, res) => {
+    const CGenero = 'Select housebank_movies_new.genres.genre from housebank_movies_new.genres';
+    db.query(CGenero, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    }); 
+};
+
+//trae peliculas por genero
+const getLisXGenero = (req, res) => {
+    const { genreId } = req.query;
+    //const { Gen } = req.params;
+    const SQL = 'SELECT housebank_movies_new.movies.title, movies.year_release FROM housebank_movies_new.movies JOIN housebank_movies_new.movie_genres ON housebank_movies_new.movies.id = housebank_movies_new.movie_genres.movie_id JOIN housebank_movies_new.genres ON housebank_movies_new.movie_genres.genre_id = housebank_movies_new.genres.id WHERE housebank_movies_new.genres.id= ?';
+    db.query(SQL,[genreId], (err, results) => {    
+        if (err) throw err;
+        res.json(results);
+    });
+        
+};
+
+
 /*
 const getMovieById = (req, res) => {
     const { id } = req.params;
@@ -55,7 +77,9 @@ const updateMovie = (req, res) => {
 */
 module.exports = {
     getAllMovies,
-    getAllMovies1
+    getAllMovies1,
+    getGenero,
+    getLisXGenero
 };
     //getMovieById,
     //createMovie,

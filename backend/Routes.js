@@ -7,6 +7,8 @@ const Controller = require('../controllers/Controller');
 //se obtinen todas las peliculas
 router.get('/', Controller.getAllMovies);
 router.get('/all', Controller.getAllMovies1);
+router.get('/genero', Controller.getGenero);
+router.get('/LGen/:genreId', Controller.getLisXGenero); //listado por genero
 
 //se obtiene una pelicula por id
 /*
