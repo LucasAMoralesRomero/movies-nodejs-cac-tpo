@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccione el genero de la lista desplegable:</title>
+    <style>
+        #selectedGenre {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seleccione el genero de la lista desplegable:</h1>
+    <select id="genreDropdown">
+        <!-- Options will be populated here -->
+    </select>
+
+    <div id="selectedGenre">Genero seleccionado: </div>
+
+    <script>
+        // Función para obtener los géneros y llenar la lista desplegable
+        async function fetchGenres() {
+            try {
+                const response = await fetch('http://localhost:3000/movies/genero');
+                const genres = await response.json();
+
+                const dropdown = document.getElementById('genreDropdown');
+                genres.forEach(genre => {
+                    const option = document.createElement('option');
+                    option.textContent = genre.genre;
+                    option.value = genre.genre;
+                    dropdown.appendChild(option);
+                });
+
+                // Añadir un evento de cambio para actualizar el género seleccionado
+                dropdown.addEventListener('change', function() {
+                    const selectedGenre = dropdown.value;
+                    document.getElementById('selectedGenre').textContent = `Genero seleccionado: ${selectedGenre}`;
+                });
+            } catch (error) {
+                console.error('Error fetching genres:', error);
+            }
+        }
+
+        // Llamar a la función para llenar la lista desplegable cuando se cargue la página
+        window.onload = fetchGenres;
+    </script>
+</body>
+</html>

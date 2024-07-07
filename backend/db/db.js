@@ -2,12 +2,11 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'movies'
+    host: 'mysql-housebank.alwaysdata.net',
+    user: 'housebank_user',
+    password: 'vainillas',
+    database: 'housebank_movies_new'
 });
-
 connection.connect((err) => {
     if (err) {
         console.error('Error connecting to the database: ', err);
