@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar peliculas</title>
+    <script>
+        // Función para obtener los detalles de la película
+        function fetchMovieDetails() {
+            const title = document.getElementById('movieTitle').value;
+            fetch(`http://localhost:3000/movies/xtitulo/${title}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const movie = data[0];
+                        document.getElementById('movieId').value = movie.id;
+                        document.getElementById('yearRelease').value = movie.year_release;
+                        document.getElementById('overview').value = movie.overview;
+                        document.getElementById('originalLanguage').value = movie.original_language;
+                        document.getElementById('castingName').value = movie.casting_name;
+                        document.getElementById('directorName').value = movie.director_name;
+                    } else {
+                        alert('Movie not found');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Función para editar los detalles de la película
+        function editMovieDetails() {
+            const movieDetails = {
+                id: document.getElementById('movieId').value,
+                title: document.getElementById('movieTitle').value,
+                year_release: document.getElementById('yearRelease').value,
+                overview: document.getElementById('overview').value,
+                original_language: document.getElementById('originalLanguage').value,
+                casting_name: document.getElementById('castingName').value,
+                director_name: document.getElementById('directorName').value
+            };
+
+            fetch('http://localhost:3000/movies/edit', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(movieDetails)
+            })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Editar peliculas</h1>
+    <label for="movieTitle">Title:</label>
+    <input type="text" id="movieTitle">
+    <button onclick="fetchMovieDetails()">Fetch Details</button>
+    <br><br>
+
+    <form>
+        <input type="hidden" id="movieId">
+        <label for="yearRelease">Year Release:</label>
+        <input type="text" id="yearRelease"><br>
+        <label for="overview">Overview:</label>
+        <input type="text" id="overview"><br>
+        <label for="originalLanguage">Original Language:</label>
+        <input type="text" id="originalLanguage"><br>
+        <label for="castingName">Casting Name:</label>
+        <input type="text" id="castingName"><br>
+        <label for="directorName">Director Name:</label>
+        <input type="text" id="directorName"><br>
+        <button type="button" onclick="editMovieDetails()">Save</button>
+    </form>
+</body>
+</html>

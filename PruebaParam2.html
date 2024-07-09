@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Param</title>
+</head>
+<body>
+    <h1>Prueba Param</h1>
+    <form id="pruebaForm">
+        <input type="number" name="PP" id="PP" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('pruebaForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const PP = document.getElementById('PP').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/movies/Prueba/${PP}`);
+                const result = await response.json();
+
+                let resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+                if (result.length > 0) {
+                    result.forEach(movie => {
+                        resultDiv.innerHTML += `<p>Titulo: ${movie.title}, Año: ${movie.year_release}, Descripcion: ${movie.overview}</p>`;
+                    });
+                } else {
+                    resultDiv.innerHTML = '<p>No results found</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('result').textContent = 'Error fetching data';
+            }
+        });
+    </script>
+</body>
+</html>

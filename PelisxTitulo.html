@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Param3</title>
+</head>
+<body>
+    <h1>Buscar Película por Título</h1>
+    <form id="pruebaForm">
+        <label for="title">Buscar películas por título:</label>
+        <input type="text" name="title" id="title" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('pruebaForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const title = document.getElementById('title').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/movies/Prueba3/${title}`);
+                const result = await response.json();
+
+                let resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+                if (result.length > 0) {
+                    result.forEach(movie => {
+                        resultDiv.innerHTML += `<p>ID: ${movie.id}, Año de Lanzamiento: ${movie.year_release}, Resumen: ${movie.overview}</p>`;
+                    });
+                } else {
+                    resultDiv.innerHTML = '<p>No se encontraron resultados</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('result').textContent = 'Error fetching data';
+            }
+        });
+    </script>
+</body>
+</html>

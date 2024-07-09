@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas por año</title>
+</head>
+<body>
+    <h1>Buscar Películas por Año de Lanzamiento</h1>
+    <form id="pruebaForm">
+        <label for="year_release">Año de Lanzamiento:</label>
+        <input type="number" name="year_release" id="year_release" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('pruebaForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const year_release = document.getElementById('year_release').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/movies/Prueba2/${year_release}`);
+                const result = await response.json();
+
+                let resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+                if (result.length > 0) {
+                    result.forEach(movie => {
+                        resultDiv.innerHTML += `<p>ID: ${movie.id}, Título: ${movie.title}, Resumen: ${movie.overview}</p>`;
+                    });
+                } else {
+                    resultDiv.innerHTML = '<p>No se encontraron resultados</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                document.getElementById('result').textContent = 'Error fetching data';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,7 +4,12 @@ const movieRoutes = require('../routes/Routes');
 const cors = require('cors');
 const app = express();
 
+//agregado para multer
+//const express = require('express');
+//const router = express.Router();
+//const upload = require('./upload'); // Import Multer configuration
 
+//agregado para cors
 const corsOptions = {
   origin: '*',//'http://127.0.0.1:5500',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar y Eliminar Película</title>
+  <script>
+    function buscarPelicula() {
+      const title = document.getElementById('titleInput').value;
+      fetch(`http://localhost:3000/movies/xtitulo/${title}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            const movie = data[0];
+            document.getElementById('movieId').value = movie.id;
+            document.getElementById('movieIdDisplay').value = movie.id;
+            document.getElementById('movieTitle').value = movie.title;
+            document.getElementById('yearRelease').value = movie.year_release;
+            document.getElementById('overview').value = movie.overview;
+            document.getElementById('originalLanguage').value = movie.original_language;
+            document.getElementById('genre').value = movie.genre;
+            document.getElementById('castingName').value = movie.casting_name;
+            document.getElementById('directorName').value = movie.director_name;
+            document.getElementById('resultSection').style.display = 'block';
+          } else {
+            alert('No se encontraron películas con ese título.');
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function eliminarPelicula() {
+      const id = document.getElementById('movieId').value;
+      alert(id)
+      fetch('http://localhost:3000/movies/delete', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id })
+      })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('resultSection').style.display = 'none';
+          document.getElementById('message').innerText = data.message;
+          document.getElementById('message').style.display = 'block';
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function cancelar() {
+      document.getElementById('titleInput').value = '';
+      document.getElementById('resultSection').style.display = 'none';
+      document.getElementById('message').style.display = 'none';
+      document.getElementById('titleInput').focus();
+    }
+  </script>
+</head>
+<body>
+  <h1>Buscar y Eliminar Película</h1>
+  <div>
+    <label for="titleInput">Título:</label>
+    <input type="text" id="titleInput" name="title">
+    <button type="button" onclick="buscarPelicula()">Buscar</button>
+  </div>
+  <div id="resultSection" style="display:none;">
+    <h2>Detalles de la Película</h2>
+    <input type="hidden" id="movieId">
+    <p>
+      <label for="movieIdDisplay">ID:</label>
+      <input type="text" id="movieIdDisplay" readonly>
+    </p>
+    <p>
+      <label for="movieTitle">Título:</label>
+      <input type="text" id="movieTitle" readonly>
+    </p>
+    <p>
+      <label for="yearRelease">Año de Estreno:</label>
+      <input type="text" id="yearRelease" readonly>
+    </p>
+    <p>
+      <label for="overview">Descripción:</label>
+      <input type="text" id="overview" readonly>
+    </p>
+    <p>
+      <label for="originalLanguage">Idioma Original:</label>
+      <input type="text" id="originalLanguage" readonly>
+    </p>
+    <p>
+      <label for="genre">Género:</label>
+      <input type="text" id="genre" readonly>
+    </p>
+    <p>
+      <label for="castingName">Nombre del Elenco:</label>
+      <input type="text" id="castingName" readonly>
+    </p>
+    <p>
+      <label for="directorName">Nombre del Director:</label>
+      <input type="text" id="directorName" readonly>
+    </p>
+    <button type="button" onclick="eliminarPelicula()">Eliminar Registro</button>
+    <button type="button" onclick="cancelar()">Limpiar formulario y buscar</button>
+  </div>
+  <div id="message" style="display:none;"></div>
+</body>
+</html>
