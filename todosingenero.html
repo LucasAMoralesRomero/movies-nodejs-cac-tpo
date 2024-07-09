@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado completo</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('http://localhost:3000/movies/')
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('moviesTable');
+                    data.forEach(movie => {
+                        const row = table.insertRow();
+                        row.insertCell(0).innerText = movie.id;
+                        row.insertCell(1).innerText = movie.title;
+                        row.insertCell(2).innerText = movie.year_release;
+                        row.insertCell(3).innerText = movie.overview;
+                        row.insertCell(4).innerText = movie.original_language;
+                        row.insertCell(5).innerText = movie.casting_name;
+                        row.insertCell(6).innerText = movie.director_name;
+                    });
+                });
+        });
+    </script>
+</head>
+<body>
+    <h1>Movies List</h1>
+    <table id="moviesTable" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Lanzamiento</th>
+            <th>Resumen</th>
+            <th>Idioma</th>
+            <!-- <th>Genero</th> -->
+            <th>Actores</th>
+            <th>Director</th>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <script>
+        // Fetch movie titles and populate the dropdown
+        function fetchTitles() {
+            fetch('http://localhost:3000/movies/titulos')
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('titlesDropdown');
+                    data.forEach(movie => {
+                        const option = document.createElement('option');
+                        option.value = movie.title;
+                        option.text = movie.title;
+                        select.add(option);
+                    });
+                })
+                .catch(error => console.error('Error fetching titles:', error));
+        }
+
+        // Fetch movie details based on the selected title
+        function fetchMovieDetails() {
+            const title = document.getElementById('titlesDropdown').value;
+            fetch(`http://localhost:3000/movies/xtitulo/${title}`)
+                .then(response => response.json())
+                .then(data => {
+                    const detailsDiv = document.getElementById('movieDetails');
+                    detailsDiv.innerHTML = '';
+                    if (data.length > 0) {
+                        const movie = data[0];
+                        detailsDiv.innerHTML = `
+                            <p>ID: ${movie.id}</p>
+                            <p>Titulo: ${movie.title}</p>
+                            <p>Lanzamiento: ${movie.year_release}</p>
+                            <p>Overview: ${movie.overview}</p>
+                            <p>Idioma: ${movie.original_language}</p>
+                            <p>Actor: ${movie.casting_name}</p>
+                            <p>Director: ${movie.director_name}</p>
+                        `;
+                    } else {
+                        detailsDiv.innerHTML = '<p>No details found for the selected title.</p>';
+                    }
+                })
+                .catch(error => console.error('Error fetching movie details:', error));
+        }
+
+        // Populate the dropdown on page load
+        window.onload = fetchTitles;
+        
+        //con un click en la pagina, limpiamos
+        document.addEventListener('click', function(event) {
+            const select = document.getElementById('titlesDropdown');
+            select.selectedIndex = 0;
+            const detailsDiv = document.getElementById('movieDetails');
+            detailsDiv.innerHTML = '';
+        });
+    </script>
+</head>
+<body>
+    <h1>Peliculas</h1>
+    <select id="titlesDropdown" onchange="fetchMovieDetails()">
+        <option value="">Seleccione por título</option>
+    </select>
+    <div id="movieDetails"></div>
+</body>
+</html>
