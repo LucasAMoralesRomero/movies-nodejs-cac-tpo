@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrador de Películas</title>
+    <link rel="stylesheet" href="../css/abm_estilos.css">
+    <script src="../js/movies_abm.js" defer></script>
+</head>
+<body>
+    <h1>Listado de Películas</h1>
+    <button onclick="location.href='alta.html'">Agregar Nueva Película</button>
+    <button onclick="location.href='../index.html'">Salir del administrador de Películas</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Año de Lanzamiento</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="moviesList"></tbody>
+    </table>
+</body>
+</html>

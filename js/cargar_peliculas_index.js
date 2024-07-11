@@ -1,63 +1,60 @@
-const API_SERVER = 'https://api.themoviedb.org/3';
+const API_SERVER = 'http://localhost:3000/movies/all';
 const options = {
-    method: 'GET', // Método de la petición (GET)
+    method: 'GET',
     headers: {
-        accept: 'application/json', // Tipo de respuesta esperada (JSON)
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8'
-        
+        accept: 'application/json'
     }
 };
 
-// Función para cargar películas en la cuadrícula de tendencias
-const cargarPeliculasTendencia = async (page = 1) => {
-    // Realizamos una petición fetch a la API para obtener las películas populares
-    const response = await fetch(`${API_SERVER}/movie/popular?page=${page}`, options);
-    const data = await response.json(); // Convertimos la respuesta a JSON
-    const movies = data.results;// Extraemos las películas de la respuesta
-    console.log(movies);
-    const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');// Seleccionamos el contenedor de películas de tendencia en el DOM, la section que tiene dentro el div peliculas
-    tendenciasContainer.innerHTML = '';// Limpiamos el contenido previo del contenedor
+const cargarPeliculasTendencia = async () => {
+    try {
+        const response = await fetch(API_SERVER, options);
+        const data = await response.json();
+        const movies = data;
+        console.log(movies);
 
-    //* Iteramos sobre cada película obtenida y creamos los elementos HTML para mostrar la película teniendo que en cuenta que se debe respetar la siguiente estructura por los estilos:
-    /*<a href="./pages/detalle.html">
-                    <div class="pelicula">
-                        <img class="imgTendencia" src="./assets/img/peli_1.jpg" alt="The Beekeeper" loading="lazy">
-                        <div class="tituloPelicula">
-                            <h4>The Beekeeper</h4>
-                        </div>
-                    </div>
-      </a>*/
-    movies.forEach(movie => {
-        // creo el ancla
-        const ancla = document.createElement('a');
-        ancla.href = './pages/detalle.html';
-        // creo el div pelicula
-        const pelicula = document.createElement('div');
-        pelicula.classList.add('pelicula');
-        // creo la imagen
-        const img = document.createElement('img');
-        img.classList.add('imgTendencia');
-        img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
-        img.alt = movie.title;
-        img.loading = 'lazy';
-        // creo el div tituloPelicula
-        const tituloPelicula = document.createElement('div');
-        tituloPelicula.classList.add('tituloPelicula');
-        // creo el h4
-        const titulo = document.createElement('h4');
-        titulo.textContent = movie.title;
-        // relaciono los elementos
-        ancla.appendChild(pelicula);
-        pelicula.appendChild(img);
-        pelicula.appendChild(tituloPelicula);
-        tituloPelicula.appendChild(titulo);
-        tendenciasContainer.appendChild(ancla);
-      
-    });
+        const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');
+        tendenciasContainer.innerHTML = '';
 
-    // Actualizamos el atributo data-page con el número de página actual
-    tendenciasContainer.parentElement.setAttribute('data-page', page);
+        movies.forEach(movie => {
+            const ancla = document.createElement('a');
+            //en la ancla paso el id de la pelicula
+            ancla.href = `./pages/detalle.html?id=${movie.id}`;
+
+            const pelicula = document.createElement('div');
+            pelicula.classList.add('pelicula');
+
+            const img = document.createElement('img');
+            img.classList.add('imgTendencia');
+            img.src = `${movie.image_poster}`; 
+            img.alt = movie.title;
+            img.loading = 'lazy';
+
+            const tituloPelicula = document.createElement('div');
+            tituloPelicula.classList.add('tituloPelicula');
+
+            const titulo = document.createElement('h4');
+            titulo.textContent = movie.title;
+
+            // Estructura de los elementos
+            ancla.appendChild(pelicula);
+            pelicula.appendChild(img);
+            pelicula.appendChild(tituloPelicula);
+            tituloPelicula.appendChild(titulo);
+            tendenciasContainer.appendChild(ancla);
+        });
+
+        // Actualizamos el atributo data-page con el número de página actual
+        tendenciasContainer.parentElement.setAttribute('data-page', 1); // Si no tienes paginación, puedes fijarlo en 1
+    } catch (error) {
+        console.error('Error al cargar las películas:', error);
+    }
 };
+
+// Llamada a la función para cargar las películas al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarPeliculasTendencia();
+});
 
 // Función para cargar películas en el carrusel de películas aclamadas
 const cargarPeliculasAclamadas = async () => {
