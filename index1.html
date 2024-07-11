@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Películas</title>
+  <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Películas</h1>
+    <a href="#footer" class="about-link">Acerca de</a>
+  </header>
+  <main>
+    <section id="alta">
+      <!-- <h2>Alta</h2> -->
+      <input type="text" name="titulo" placeholder="Título" required onfocus="mostrarCampos('alta')">
+      <div class="campos" id="alta-campos">
+        <input type="number" name="anio" placeholder="Año" required>
+        <input type="text" name="idioma" placeholder="Idioma" required>
+        <textarea name="descripcion" placeholder="Descripción" required></textarea>
+        <input type="text" name="genero" placeholder="Género" required>
+        <input type="text" name="director" placeholder="Director" required>
+      </div>
+      <button onclick="operacionExitosa('Alta')">Alta</button>
+    </section>
+    <section id="consulta">
+      <!-- <h2>Consulta</h2> -->
+      <input type="text" name="buscarTitulo" placeholder="Buscar por Título" required onfocus="mostrarCampos('consulta')">
+      <div class="campos" id="consulta-campos">
+        <input type="number" name="anio" placeholder="Año" disabled>
+        <input type="text" name="idioma" placeholder="Idioma" disabled>
+        <textarea name="descripcion" placeholder="Descripción" disabled></textarea>
+        <input type="text" name="genero" placeholder="Género" disabled>
+        <input type="text" name="director" placeholder="Director" disabled>
+      </div>
+      <button onclick="operacionExitosa('Consulta')">Consulta</button>
+    </section>
+    <section id="modificacion">
+      <!-- <h2>Modificación</h2> -->
+      <input type="text" name="modificarTitulo" placeholder="Título" required onfocus="mostrarCampos('modificacion')">
+      <div class="campos" id="modificacion-campos">
+        <input type="number" name="nuevoAnio" placeholder="Nuevo Año" required>
+        <input type="text" name="nuevoIdioma" placeholder="Nuevo Idioma" required>
+        <textarea name="nuevaDescripcion" placeholder="Nueva Descripción" required></textarea>
+        <input type="text" name="nuevoGenero" placeholder="Nuevo Género" required>
+        <input type="text" name="nuevoDirector" placeholder="Nuevo Director" required>
+      </div>
+      <button onclick="operacionExitosa('Modificación')">Modificación</button>
+    </section>
+    <section id="borrado">
+      <!-- <h2>Borrado</h2> -->
+      <input type="text" name="borrarTitulo" placeholder="Título" required onfocus="mostrarCampos('borrado')">
+      <div class="campos" id="borrado-campos">
+        <input type="number" name="anio" placeholder="Año" disabled>
+        <input type="text" name="idioma" placeholder="Idioma" disabled>
+        <textarea name="descripcion" placeholder="Descripción" disabled></textarea>
+        <input type="text" name="genero" placeholder="Género" disabled>
+        <input type="text" name="director" placeholder="Director" disabled>
+      </div>
+      <button onclick="operacionExitosa('Borrado')">Borrado</button>
+    </section>
+  </main>
+  <footer id="footer">
+    <p>Grupo 8</p>
+    <p>Tecnología1</p>
+    <p>Tecnología2</p>
+    <p>Tecnología3</p>
+    <a href="#" class="subir-link">Subir</a>
+  </footer>
+  <script>
+   function mostrarCampos(id) {
+    // Esconde todos los campos primero
+    document.querySelectorAll('.campos').forEach(campo => campo.style.display = 'none');
+    // Muestra solo los campos relevantes
+    document.getElementById(`${id}-campos`).style.display = 'block';
+}
+
+function operacionExitosa(operacion) {
+    alert(`Operación de ${operacion} exitosa`);
+    // Oculta todos los campos después de la operación
+    document.querySelectorAll('.campos').forEach(campo => campo.style.display = 'none');
+}
+  </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ use movies;
 	create table generos
     (
 		id int not null primary key auto_increment,
-        nombre_genero varchar(10)
+        nombre_genero varchar(20)
     );
 
 -- usamos la base de datos
@@ -70,3 +70,34 @@ use movies;
         foreign key (id_movie) references pelicula(id),
         foreign key (id_actor) references actors(id)
 	);
+
+    
+-- usamos la base de datos
+use movies;
+-- creamos la tabla paises 
+	create table paises(
+    id int not null primary key auto_increment,
+    nombre varchar (80)
+    );    
+    
+    
+-- usamos la base de datos
+use movies;
+-- creamos la tabla usuarios (de registro)
+	create table usuarios(
+    id int not null primary key auto_increment,
+    nombre varchar (30),
+    apellido varchar (30),
+    sexo char,
+    telefono varchar (16),
+    mail varchar (40),
+    id_paises int,
+    id_generos int,
+    usuario varchar (40),
+    contrasenia varchar (40),
+    -- notificaciones funciona como una bandera o booleano 1= recibe notificaciones 0= no recibe
+    notificaciones int,
+    -- creamos las fk para paises y generos
+        foreign key (id_paises) references paises(id),
+        foreign key (id_generos) references generos(id)
+    );

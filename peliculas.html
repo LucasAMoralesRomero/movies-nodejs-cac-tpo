@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+</head>
+<body>
+    <h1>Movies</h1>
+    <button id="fetch-button">Pelis desde la base en AlwaisData</button>
+    <table id="movies-table" border="1">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Lanzamiento</th>
+                <th>Resumen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('fetch-button').addEventListener('click', function() {
+            fetch('http://localhost:3000/movies/all')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.querySelector('#movies-table tbody');
+                    tableBody.innerHTML = ''; // Clear existing data
+                    data.forEach(movie => {
+                        const row = document.createElement('tr');
+                        const titleCell = document.createElement('td');
+                        const yearCell = document.createElement('td');
+                        const overviewCell = document.createElement('td');
+
+                        titleCell.textContent = movie.title;
+                        yearCell.textContent = movie.year_release;
+                        overviewCell.textContent = movie.overview;
+
+                        row.appendChild(titleCell);
+                        row.appendChild(yearCell);
+                        row.appendChild(overviewCell);
+
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+</body>
+</html>
