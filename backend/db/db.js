@@ -1,5 +1,6 @@
 //definimos el objeto de conexion a la base de datos
 const mysql = require('mysql2');
+//const mysql = require('mysql2/promise');
 
 const connection = mysql.createConnection({
     host: 'mysql-housebank.alwaysdata.net',

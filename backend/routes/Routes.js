@@ -9,14 +9,19 @@ router.get('/', Controller.getAllMovies);
 router.get('/all', Controller.getAllMovies1);
 router.get('/genero', Controller.getGenero);
 router.get('/LGen/:genreId', Controller.getLisXGenero); //listado por genero
-
 //se obtiene una pelicula por id
-/*
-router.get('/:id', movieController.getMovieById);
 
-router.post('/', movieController.createMovie);
-router.put('/:id', movieController.updateMovie);
-router.delete('/:id', movieController.deleteMovie);
+router.get('/:id', Controller.getMovieById);
+
+
+//controladores de ABM
+
+router.post('/', Controller.createMovie);
+router.put('/:id', Controller.editMovie);
+/*
+
+router.put('/:id', Controller.updateMovie);
+router.delete('/:id', Controller.deleteMovie);
 */
 
 module.exports = router;
