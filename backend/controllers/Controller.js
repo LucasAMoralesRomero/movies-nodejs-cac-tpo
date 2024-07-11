@@ -568,6 +568,61 @@ const editMovie = (req, res) => {
   });
 };
 
+//controlador para borrar pelicula
+const deleteMovieById = (req, res) => {
+    const { id } = req.params;
+
+    db.beginTransaction(err => {
+        if (err) {
+            console.error("Error al iniciar la transacción:", err);
+            return res.status(500).json({ message: "Error al iniciar la transacción", error: err });
+        }
+
+        const deleteRelations = (sql, id, callback) => {
+            db.query(sql, [id], (err, result) => {
+                if (err) {
+                    console.error("Error al eliminar relaciones:", err);
+                    return db.rollback(() => {
+                        res.status(500).json({ message: "Error al eliminar relaciones", error: err });
+                    });
+                }
+                callback();
+            });
+        };
+
+        deleteRelations('DELETE FROM housebank_movies_new.movie_genres WHERE movie_id = ?', id, () => {
+            deleteRelations('DELETE FROM housebank_movies_new.movie_directors WHERE movie_id = ?', id, () => {
+                deleteRelations('DELETE FROM housebank_movies_new.movie_scriptwriters WHERE movie_id = ?', id, () => {
+                    deleteRelations('DELETE FROM housebank_movies_new.movie_casting WHERE movie_id = ?', id, () => {
+                        deleteRelations('DELETE FROM housebank_movies_new.movie_videos WHERE movie_id = ?', id, () => {
+                            deleteRelations('DELETE FROM housebank_movies_new.movie_links WHERE movie_id = ?', id, () => {
+                                db.query('DELETE FROM housebank_movies_new.movies WHERE id = ?', [id], (err, result) => {
+                                    if (err) {
+                                        console.error("Error al eliminar película:", err);
+                                        return db.rollback(() => {
+                                            res.status(500).json({ message: "Error al eliminar película", error: err });
+                                        });
+                                    }
+
+                                    db.commit(err => {
+                                        if (err) {
+                                            console.error("Error al realizar commit:", err);
+                                            return db.rollback(() => {
+                                                res.status(500).json({ message: "Error al realizar commit", error: err });
+                                            });
+                                        }
+                                        res.json({ message: 'Película eliminada con éxito' });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+};
+
 //Trae el listado de generos de la base para la lista de generos
 const getGenero = (req, res) => {
     const CGenero = 'Select housebank_movies_new.genres.genre from housebank_movies_new.genres';
@@ -629,7 +684,7 @@ const editMovieDetails = (req, res) => {
     });
 };
 
-
+/*
 // Eliminar una película por id
 const deleteMovieById = (req, res) => {
     const { id } = req.params;
@@ -830,7 +885,7 @@ module.exports = {
     getAllTitulos,
     getAllMoviesxTitulo,
     editMovieDetails,
-    deleteMovieById,
+    deleteMovieById, 
     //Controladores de ABM
     createMovie,
     editMovie,

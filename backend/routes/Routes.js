@@ -18,6 +18,7 @@ router.get('/:id', Controller.getMovieById);
 
 router.post('/', Controller.createMovie);
 router.put('/:id', Controller.editMovie);
+router.delete('/:id', Controller.deleteMovieById);
 /*
 
 router.put('/:id', Controller.updateMovie);
