@@ -25,7 +25,7 @@ function fetchMovies() {
 }
 
 function editMovie(id) {
-    window.location.href = `edit.html?id=${id}`;
+    window.location.href = `modifica.html?id=${id}`;
 }
 
 function deleteMovie(id) {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Película</title>
+    <link rel="stylesheet" href="../css/abm_estilos.css">
+</head>
+<body>
+    <h1>Editar Película</h1>
+    <form id="editMovieForm">
+        <input type="hidden" id="movieId">
+        <input type="text" id="title" placeholder="Título" required>
+        <input type="number" id="year_release" placeholder="Año de Lanzamiento" required>
+        <input type="text" id="image_bg" placeholder="URL Imagen de Fondo">
+        <input type="text" id="image_poster" placeholder="URL Imagen del Poster">
+        <textarea id="overview" placeholder="Descripción"></textarea>
+        <input type="text" id="budget" placeholder="Presupuesto">
+        <input type="text" id="revenue" placeholder="Ingresos">
+        <input type="text" id="movie_status" placeholder="Estado de la película">
+        <input type="text" id="original_language" placeholder="Idioma Original">
+        <input type="text" id="genres" placeholder="Géneros separados por comas (ej: Acción, Aventura)">
+        <input type="text" id="director_name" placeholder="Nombre del Director">
+        <input type="text" id="scriptwriter_name" placeholder="Nombre del Guionista">
+        <input type="text" id="casting_name" placeholder="Nombres del Elenco">
+        <input type="text" id="video_url" placeholder="URL del Video">
+        <input type="text" id="facebook_url" placeholder="URL Facebook">
+        <input type="text" id="twitter_url" placeholder="URL Twitter">
+        <input type="text" id="instagram_url" placeholder="URL Instagram">
+        <input type="text" id="web_url" placeholder="URL Web">
+        <input type="submit" value="Actualizar Película">
+    </form>
+    <button onclick="location.href='admin_movies.html'">Cancelar edicion de la película</button>
+    <script src="../js/modificaMovie.js"></script>
+</body>
+</html>
