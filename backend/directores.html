@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Películas</title>
+  
+</head>
+<body>
+  <h1>Listado</h1>
+  <button id="btnCargar">Consulta Directores</button>
+  <div id="contenedor-peliculas"></div>
+
+  <script>
+    const btnCargar = document.getElementById('btnCargar');
+    const contenedorPeliculas = document.getElementById('contenedor-peliculas');
+
+    btnCargar.addEventListener('click', async () => {
+      const response = await fetch('http://localhost:3000/movies/'); 
+      const data = await response.json();
+
+       data.forEach(pelicula => {
+        const divPelicula = document.createElement('div');
+        divPelicula.innerHTML = `
+          <h2>ID:${pelicula.id} - ${pelicula.director_name}</h2>
+        `;
+        contenedorPeliculas.appendChild(divPelicula);
+      });
+    });
+  
+  </script>
+</body>
+</html>
